@@ -52,7 +52,7 @@ class MainClass(Unit3D):
     @property
     def details_selector(self) -> dict:
         return {
-            'user_id': '/([^.]+\.\d+)">My Profile',
+            'user_id': r'/([^.]+\.\d+)">My Profile',
             'detail_sources': {
                 'default': {
                     'link': '/{}',
@@ -64,30 +64,30 @@ class MainClass(Unit3D):
             },
             'details': {
                 'uploaded': {
-                    'regex': ('(上传|Upload).+?([\\d.]+ ?[ZEPTGMK]?iB)', 2)
+                    'regex': (r'(上传|Upload).+?([\d.]+ ?[ZEPTGMK]?iB)', 2)
                 },
                 'downloaded': {
-                    'regex': ('(下载|Download).+?([\\d.]+ ?[ZEPTGMK]?iB)', 2)
+                    'regex': (r'(下载|Download).+?([\d.]+ ?[ZEPTGMK]?iB)', 2)
                 },
                 'share_ratio': {
-                    'regex': ('(分享率|Ratio).+?([\\d.]+)', 2)
+                    'regex': (r'(分享率|Ratio).+?([\d.]+)', 2)
                 },
                 'points': {
-                    'regex': ('(魔力|BP:).+?(\\d[\\d,. ]*)', 2),
+                    'regex': (r'(魔力|BP:).+?(\d[\d,. ]*)', 2),
                     'handle': self.handle_points
                 },
                 'join_date': {
-                    'regex': ('(注册日期|Member Since:) (\\d{4}-\\d{2}-\\d{2})', 2),
+                    'regex': (r'(注册日期|Member Since:) (\d{4}-\d{2}-\d{2})', 2),
                     'handle': handle_join_date
                 },
                 'seeding': {
-                    'regex': ('(\d+)\s*?\d*%\s*?(做种|Active Seeds)', 1)
+                    'regex': (r'(\d+)\s*?\d*%\s*?(做种|Active Seeds)', 1)
                 },
                 'leeching': {
-                    'regex': ('(\d+)\s*?(吸血|Active Downloads)', 1)
+                    'regex': (r'(\d+)\s*?(吸血|Active Downloads)', 1)
                 },
                 'hr': {
-                    'regex': ('(警告|Warnings).+?(\\d+)', 2)
+                    'regex': ('(警告|Warnings).+?(\d+)', 2)
                 }
             }
         }

@@ -24,6 +24,15 @@ class MainClass(Visit, ReseedPasskey):
                         'bar': '#info_block > tbody > tr > td > table > tbody > tr > td:nth-child(1)'
                     }
                 }
+            },
+            'details': {
+                'seeding': {
+                    'regex': (r'下载量.*?\|.*?(\d+)', 1)
+                },
+                'leeching': {
+                    'regex': (r'下载量.*?\|.*?(\d+).*?(\d+)', 2)
+                },
+
             }
         })
         return selector
