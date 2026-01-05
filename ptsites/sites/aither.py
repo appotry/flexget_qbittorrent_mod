@@ -52,7 +52,7 @@ class MainClass(Unit3D):
                     'handle': self.remove_symbol
                 },
                 'points': {
-                    'regex': 'title="My Bonus Points".*?</i>.+?(\\d[\\d,. ]*)',
+                    'regex': r'title="My bonus points".*?</i>.*?(\d[\d,. ]*)',
                 },
                 'share_ratio': {
                     'regex': 'title="Ratio".*?</i>.+?(\\d[\\d,. ]*)',
@@ -62,7 +62,7 @@ class MainClass(Unit3D):
                     'handle': handle_join_date
                 },
                 'hr': {
-                    'regex': r'Hit and Run Count.*?(\d+)'
+                    'regex': r'Hit and run count.*?(\d+)'
                 }
             }
         })
